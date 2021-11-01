@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelUIManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LevelUIManager : MonoBehaviour
 
     [Header("Gameplay UI Components Reference")]
     [SerializeField] private VariableJoystick movementJS = null;
+    [SerializeField] private TextMeshProUGUI goldCountTxt = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -24,5 +26,12 @@ public class LevelUIManager : MonoBehaviour
 
     #region Getter And Setter
     public VariableJoystick GetMovementJS { get => movementJS; }
+    #endregion
+
+    #region Public Core Functions
+    public void UpdateGoldCount(int count)
+    {
+        goldCountTxt.SetText(count.ToString());
+    }
     #endregion
 }

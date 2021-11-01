@@ -7,8 +7,16 @@ public class PlayerRawGoldStorage : MonoBehaviour
     #region Properties
     [Header("Attributes")]
     [SerializeField] private float miningSpeed = 0f;
+    [SerializeField] private float storageSizeIncSpeed = 0f;
+    [SerializeField] private float storageMaxScaleSize = 0f;
+    [SerializeField] private int storageCapacity = 0;
+
+    [Header("Components Reference")]
+    [SerializeField] private Transform goldStorageTransform = null;
 
     private float goldAmount = 0;
+    private int goldUnpackedAmount = 0;
+    private Vector3 defaultGoldStorageTransformScale = Vector3.zero;
     #endregion
 
     #region Delegates
@@ -20,6 +28,7 @@ public class PlayerRawGoldStorage : MonoBehaviour
     #region Monoehaviour Functions
     private void Start()
     {
+        defaultGoldStorageTransformScale = goldStorageTransform.localScale;
         miningMechanism = null;
     }
 
@@ -29,15 +38,35 @@ public class PlayerRawGoldStorage : MonoBehaviour
         {
             miningMechanism();
 
-            print((int)goldAmount);
+            LevelUIManager.Instance.UpdateGoldCount((int)goldAmount);
         }
     }
+    #endregion
+
+    #region Getter And Setter
+    public int GetGoldAmount { get => (int)goldAmount; }
     #endregion
 
     #region Private Core Functions
     private void MiningMech()
     {
         goldAmount += (Time.deltaTime * miningSpeed);
+
+        StorageSizeIncMech();
+
+        if ((int)goldAmount > storageCapacity)
+        {
+            goldAmount = storageCapacity;
+            EnableMiningMech(false);
+        }
+    }
+
+    private void StorageSizeIncMech()
+    {
+        if (goldStorageTransform.localScale.x < storageMaxScaleSize)
+        {
+            goldStorageTransform.localScale += Vector3.one * Time.deltaTime * storageSizeIncSpeed; 
+        }
     }
     #endregion
 
@@ -52,6 +81,15 @@ public class PlayerRawGoldStorage : MonoBehaviour
         {
             miningMechanism = null;
         }
+    }
+
+    public int UnpackCollectedGold()
+    {
+        goldStorageTransform.localScale = defaultGoldStorageTransformScale;
+        goldUnpackedAmount = (int)goldAmount;
+        goldAmount = 0;
+        LevelUIManager.Instance.UpdateGoldCount((int)goldAmount);
+        return goldUnpackedAmount;
     }
     #endregion
 }
