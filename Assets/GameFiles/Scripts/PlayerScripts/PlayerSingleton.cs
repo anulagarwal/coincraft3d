@@ -10,6 +10,7 @@ public class PlayerSingleton : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private PlayerMovementHandler playerMovementHandler = null;
     [SerializeField] private PlayerAnimationsHandler playerAnimationsHandler = null;
+    [SerializeField] private PlayerRawGoldStorage playerRawGoldStorage = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -29,5 +30,7 @@ public class PlayerSingleton : MonoBehaviour
     public PlayerMovementHandler GetPlayerMovementHandler { get => playerMovementHandler; }
 
     public PlayerAnimationsHandler GetPlayerAnimationsHandler { get => playerAnimationsHandler; }
+    
+    public PlayerRawGoldStorage GetPlayerRawGoldStorage { get => playerRawGoldStorage; }
     #endregion
 }
