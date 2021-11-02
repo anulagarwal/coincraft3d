@@ -361,7 +361,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630792121}
-  m_LocalRotation: {x: 0.40941626, y: 0.000000015698204, z: -0.000000007044573, w: 0.91234773}
+  m_LocalRotation: {x: 0.40941626, y: -0.000000015698202, z: 0.000000007044572, w: 0.91234773}
   m_LocalPosition: {x: 0, y: 0.972, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -457,6 +457,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 311516263, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366730307, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366730307, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366730307, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 672295506, guid: 7a1f6e49867fc04459ebc5aeb5afe64b, type: 3}
@@ -839,6 +851,7 @@ MonoBehaviour:
   coinSpawnAmount: 10
   coinWidth: 0.25
   coinPosition: {x: 0, y: 0.5, z: 0}
+  coinSweepspeed: 2
   coinPrefab: {fileID: 1480430536236855739, guid: 61ed73a0910beaa419c45c89ad049f75, type: 3}
   coinsHolder: {fileID: 424202719}
 --- !u!1 &1671182274
@@ -1110,7 +1123,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913408006}
-  m_LocalRotation: {x: 0.40941626, y: 0.000000015698204, z: -0.000000007044573, w: 0.91234773}
+  m_LocalRotation: {x: 0.40941626, y: -0.000000015698202, z: 0.000000007044572, w: 0.91234773}
   m_LocalPosition: {x: -0, y: 0.972, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -11,6 +11,7 @@ public class CoinsManager : MonoBehaviour
     [SerializeField] private int coinSpawnAmount = 0;
     [SerializeField] private float coinWidth = 0f;
     [SerializeField] private Vector3 coinPosition = Vector3.zero;
+    [SerializeField] private float coinSweepspeed = 0;
 
     [Header("Components Reference")]
     [SerializeField] private GameObject coinPrefab = null;
@@ -18,6 +19,13 @@ public class CoinsManager : MonoBehaviour
 
     private float coinXPosOffset = 0f;
     private int activeCoinIndex = 0;
+    private Vector3 targetPosition = Vector3.zero;
+    #endregion
+
+    #region Delegates
+    public delegate void MoveCoinHolderMech();
+
+    public MoveCoinHolderMech moveCoinHolderMech = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -35,6 +43,15 @@ public class CoinsManager : MonoBehaviour
         activeCoinIndex = 0;
         SpawnCoins();
     }
+
+
+    private void Update()
+    {
+        if (moveCoinHolderMech != null)
+        {
+            moveCoinHolderMech();
+        }
+    }
     #endregion
 
     #region Getter And Setter
@@ -50,15 +67,37 @@ public class CoinsManager : MonoBehaviour
             coinPosition.x -= coinWidth;
         }
     }
+
+    private void MoveCoinHolderToTargetPosition()
+    {
+        if (Vector3.Distance(coinsHolder.position, targetPosition) > 0f)
+        {
+            coinsHolder.position = Vector3.MoveTowards(coinsHolder.position, targetPosition, Time.deltaTime * coinSweepspeed);
+        }
+        else
+        {
+            coinsHolder.position = targetPosition;
+            StampSingleton.Instance.IsUseAble = true;
+            MoveToNext(false);
+        }
+    }
     #endregion
 
     #region Public Core Functions
-    public void MoveToNext()
+    public void MoveToNext(bool value)
     {
-        if (activeCoinIndex < coinSpawnAmount)
+        if (value)
         {
-            coinsHolder.position = new Vector3(coinsHolder.position.x + coinWidth, coinsHolder.position.y, coinsHolder.position.z);
-            activeCoinIndex++;
+            if (activeCoinIndex < coinSpawnAmount)
+            {
+                targetPosition = new Vector3(coinsHolder.position.x + coinWidth, coinsHolder.position.y, coinsHolder.position.z);
+                activeCoinIndex++;
+                moveCoinHolderMech += MoveCoinHolderToTargetPosition;
+            }
+        }
+        else
+        {
+            moveCoinHolderMech = null;
         }
     }
     #endregion

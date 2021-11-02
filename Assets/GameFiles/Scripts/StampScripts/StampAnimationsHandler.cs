@@ -13,11 +13,10 @@ public class StampAnimationsHandler : MonoBehaviour
     private void AnimEvent_PlaceStampEnd()
     {
         animator.SetBool("b_PlaceStamp", false);
-        StampSingleton.Instance.IsUseAble = true;
 
         if (StampSingleton.Instance.TouchedCoin)
         {
-            CoinsManager.Instance.MoveToNext();
+            CoinsManager.Instance.MoveToNext(true);
             StampSingleton.Instance.TouchedCoin = false;
         }
     }
