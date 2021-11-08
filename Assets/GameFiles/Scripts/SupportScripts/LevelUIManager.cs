@@ -19,6 +19,7 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private GameObject phase_2 = null;
     [SerializeField] private GameObject phase_3 = null;
     [SerializeField] private GameObject phase_4 = null;
+    [SerializeField] private GameObject phase_5 = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -58,24 +59,35 @@ public class LevelUIManager : MonoBehaviour
                 phase_2.SetActive(false);
                 phase_3.SetActive(false);
                 phase_4.SetActive(false);
+                phase_5.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_2:
                 phase_1.SetActive(false);
                 phase_2.SetActive(true);
                 phase_3.SetActive(false);
                 phase_4.SetActive(false);
+                phase_5.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_3:
                 phase_1.SetActive(false);
                 phase_2.SetActive(false);
                 phase_3.SetActive(true);
                 phase_4.SetActive(false);
+                phase_5.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_4:
                 phase_1.SetActive(false);
                 phase_2.SetActive(false);
                 phase_3.SetActive(false);
                 phase_4.SetActive(true);
+                phase_5.SetActive(false);
+                break;
+            case UIGameplayPhase.Phase_5:
+                phase_1.SetActive(false);
+                phase_2.SetActive(false);
+                phase_3.SetActive(false);
+                phase_4.SetActive(false);
+                phase_5.SetActive(true);
                 break;
         }
     }
