@@ -8,6 +8,7 @@ TagManager:
   - Mine
   - CollectionPoint
   - Coin
+  - WMBorder
   layers:
   - Default
   - TransparentFX

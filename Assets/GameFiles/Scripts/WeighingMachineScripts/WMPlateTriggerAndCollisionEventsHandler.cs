@@ -14,7 +14,7 @@ public class WMPlateTriggerAndCollisionEventsHandler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
-            wmHandler.UpdateWMScreen(-10);
+            //wmHandler.UpdateWMScreen(-10);
         }
     }
     #endregion
