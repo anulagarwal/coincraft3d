@@ -9,6 +9,10 @@ TagManager:
   - CollectionPoint
   - Coin
   - WMBorder
+  - Gold
+  - Rock
+  - CBExitPoint
+  - CBCollector
   layers:
   - Default
   - TransparentFX

@@ -13,3 +13,9 @@ public enum UIGameplayPhase
     Phase_4,
     Phase_5
 };
+
+public enum OreType
+{
+    Gold,
+    Rock
+};
