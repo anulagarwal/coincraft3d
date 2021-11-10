@@ -20,6 +20,9 @@ public class OreSpawner : MonoBehaviour
     private void Start()
     {
         nextTimeToSpawn = spawnSpeed;
+
+        //Testing
+        spawnAmount = PlayerPrefs.GetInt("CollectedGold");
     }
 
     private void Update()

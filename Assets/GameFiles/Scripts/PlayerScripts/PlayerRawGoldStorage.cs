@@ -87,6 +87,7 @@ public class PlayerRawGoldStorage : MonoBehaviour
     {
         goldStorageTransform.localScale = defaultGoldStorageTransformScale;
         goldUnpackedAmount = (int)goldAmount;
+        PlayerSingleton.Instance.SaveCollectedGold((int)goldAmount);
         goldAmount = 0;
         LevelUIManager.Instance.UpdateGoldCount((int)goldAmount);
         return goldUnpackedAmount;

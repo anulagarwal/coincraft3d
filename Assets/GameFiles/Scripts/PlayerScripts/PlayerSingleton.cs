@@ -33,4 +33,11 @@ public class PlayerSingleton : MonoBehaviour
     
     public PlayerRawGoldStorage GetPlayerRawGoldStorage { get => playerRawGoldStorage; }
     #endregion
+
+    #region PlayePrefs Core Functions
+    public void SaveCollectedGold(int amount)
+    {
+        PlayerPrefs.SetInt("CollectedGold", PlayerPrefs.GetInt("CollectedGold") + amount);
+    }
+    #endregion
 }

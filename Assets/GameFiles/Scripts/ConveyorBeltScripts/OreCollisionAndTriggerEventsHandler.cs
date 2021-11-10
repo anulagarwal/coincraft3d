@@ -28,6 +28,19 @@ public class OreCollisionAndTriggerEventsHandler : MonoBehaviour
         {
             rb.isKinematic = false;
             oreMovementHandler.enabled = false;
+
+            if(oreType == OreType.Gold)
+            {
+                Phase2Manager.Instance.GoldCollected++;
+            }
+            else
+            {
+                Phase2Manager.Instance.RockCollected++;
+            }
+
+            Phase2Manager.Instance.CalculatePurity();
+
+
         }
         else if (other.gameObject.tag == "CBCollector")
         {

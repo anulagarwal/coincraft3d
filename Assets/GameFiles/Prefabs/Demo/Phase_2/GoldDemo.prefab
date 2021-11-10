@@ -110,7 +110,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704094866355403263}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d853dd8f8c209894c883975248fb88b6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -142,5 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ae982f182fed54fbb30faf35bfdea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oreType: 0
   rb: {fileID: 61443452}
   oreMovementHandler: {fileID: 7911165964621631437}
