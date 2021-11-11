@@ -6,6 +6,10 @@ public class Phase2Manager : MonoBehaviour
 {
     #region Properties
     public static Phase2Manager Instance = null;
+
+    [Header("Components Reference")]
+    [SerializeField] private GameObject cam1 = null;
+    [SerializeField] private GameObject cam2 = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -34,8 +38,19 @@ public class Phase2Manager : MonoBehaviour
     #region Public Core Functions
     public void CalculatePurity()
     {
-        //Formula
+        LevelUIManager.Instance.UpdatePurityCheckBar(((float)GoldCollected - (float)RockCollected) / (float)GoldCollected);
         print(((float)GoldCollected - (float)RockCollected) / (float)GoldCollected);
+
+        if(GoldCollected >= PlayerPrefs.GetInt("CollectedGold"))
+        {
+            SwitchToCam2();
+        }
+    }
+
+    public void SwitchToCam2()
+    {
+        cam1.SetActive(false);
+        cam2.SetActive(true);
     }
     #endregion
 }

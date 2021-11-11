@@ -20,6 +20,9 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private GameObject phase_3 = null;
     [SerializeField] private GameObject phase_4 = null;
     [SerializeField] private GameObject phase_5 = null;
+
+    [Header("Phase 2 Components Reference")]
+    [SerializeField] private Image purityCheckBar = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -97,6 +100,11 @@ public class LevelUIManager : MonoBehaviour
     public void UpdateGoldCount(int count)
     {
         goldCountTxt.SetText(count.ToString());
+    }
+
+    public void UpdatePurityCheckBar(float amount)
+    {
+        purityCheckBar.fillAmount = amount;
     }
     #endregion
 }
