@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643fccdac82a7ee4199948665c86abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePhase: 3
+  activePhase: 4
   movementJS: {fileID: 5585938001693448977}
   goldCountTxt: {fileID: 690847233357579845}
   phase_1: {fileID: 8316086249460715258}
