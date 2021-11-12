@@ -8,6 +8,7 @@ public class OreSpawner : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float spawnSpeed = 0f;
     [SerializeField] private int spawnAmount = 0;
+    [SerializeField] private float spawnXLimit = 0f;
 
     [Header("Components Reference")]
     [SerializeField] private GameObject goldObj = null;
@@ -49,11 +50,11 @@ public class OreSpawner : MonoBehaviour
     {
         if (Random.Range(0, 3) == 0)
         {
-            Instantiate(rockObj, transform.position, Quaternion.identity);
+            Instantiate(rockObj, new Vector3(Random.Range(-spawnXLimit, spawnXLimit), transform.position.y, transform.position.z), Quaternion.identity);
         }
         else
         {
-            Instantiate(goldObj, transform.position, Quaternion.identity);
+            Instantiate(goldObj, new Vector3(Random.Range(-spawnXLimit, spawnXLimit), transform.position.y, transform.position.z), Quaternion.identity);
         }
 
         spawnAmount--;

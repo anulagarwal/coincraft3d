@@ -10,6 +10,7 @@ public class Phase2Manager : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private GameObject cam1 = null;
     [SerializeField] private GameObject cam2 = null;
+    [SerializeField] private ContainerHandler containerHandler = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -43,7 +44,9 @@ public class Phase2Manager : MonoBehaviour
 
         if(GoldCollected >= PlayerPrefs.GetInt("CollectedGold"))
         {
-            SwitchToCam2();
+            SwitchToCam2(); 
+            LevelUIManager.Instance.EnableMeltingMechUI(true);
+            containerHandler.enabled = true;
         }
     }
 

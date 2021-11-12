@@ -23,6 +23,9 @@ public class LevelUIManager : MonoBehaviour
 
     [Header("Phase 2 Components Reference")]
     [SerializeField] private Image purityCheckBar = null;
+    [SerializeField] private Image temperaturePB = null;
+    [SerializeField] private GameObject purityPBObj = null;
+    [SerializeField] private GameObject meltingMechUI = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -105,6 +108,36 @@ public class LevelUIManager : MonoBehaviour
     public void UpdatePurityCheckBar(float amount)
     {
         purityCheckBar.fillAmount = amount;
+    }
+
+    public void TemperatureIncrementPB(float amount)
+    {
+        if (temperaturePB.fillAmount + amount >= 1)
+        {
+            temperaturePB.fillAmount = 1;
+        }
+        else
+        {
+            temperaturePB.fillAmount = temperaturePB.fillAmount + amount;
+        }
+    }
+
+    public void TemperatureDecrementPB(float amount)
+    {
+        if (temperaturePB.fillAmount - amount <= 0)
+        {
+            temperaturePB.fillAmount = 0;
+        }
+        else
+        {
+            temperaturePB.fillAmount = temperaturePB.fillAmount - amount;
+        }
+    }
+
+    public void EnableMeltingMechUI(bool value)
+    {
+        meltingMechUI.SetActive(value);
+        purityPBObj.SetActive(!value);
     }
     #endregion
 }
