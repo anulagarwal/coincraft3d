@@ -8,9 +8,11 @@ public class ContainerHandler : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float lavaRiseSpeed = 0f;
     [SerializeField] private float lavaMaxHeight = 0f;
+    [SerializeField] private float flameRiseSpeed = 0f;
 
     [Header("Components Reference")]
     [SerializeField] private Transform lavaTransform = null;
+    [SerializeField] private Transform flameTransform = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -29,6 +31,7 @@ public class ContainerHandler : MonoBehaviour
         if (lavaTransform.position.y < lavaMaxHeight)
         {
             lavaTransform.Translate(Vector3.up * Time.deltaTime * lavaRiseSpeed);
+            flameTransform.localScale += Vector3.one * Time.deltaTime * flameRiseSpeed; 
         }
     }
     #endregion
