@@ -13,6 +13,7 @@ public class ContainerHandler : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private Transform lavaTransform = null;
     [SerializeField] private Transform flameTransform = null;
+    [SerializeField] private ParticleSystem airBlow = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -25,14 +26,26 @@ public class ContainerHandler : MonoBehaviour
     }
     #endregion
 
+    #region Getter And Setter
+    public ParticleSystem GetAirBlow { get => airBlow; }
+    #endregion
+
     #region Public Core Functions
     public void UpdateLava()
     {
         if (lavaTransform.position.y < lavaMaxHeight)
         {
+            Invoke("TurnOffAirBlow", 1f);
             lavaTransform.Translate(Vector3.up * Time.deltaTime * lavaRiseSpeed);
             flameTransform.localScale += Vector3.one * Time.deltaTime * flameRiseSpeed; 
         }
+    }
+    #endregion
+
+    #region Invoke Functions
+    private void TurnOffAirBlow()
+    {
+        airBlow.Stop();
     }
     #endregion
 }
