@@ -34,13 +34,14 @@ public class Phase2Manager : MonoBehaviour
     public int GoldCollected { get; set; }
 
     public int RockCollected { get; set; }
+
+    public ContainerHandler GetContainerHandler { get => containerHandler; }
     #endregion
 
     #region Public Core Functions
     public void CalculatePurity()
     {
         LevelUIManager.Instance.UpdatePurityCheckBar(((float)GoldCollected - (float)RockCollected) / (float)GoldCollected);
-        print(((float)GoldCollected - (float)RockCollected) / (float)GoldCollected);
 
         if(GoldCollected >= PlayerPrefs.GetInt("CollectedGold"))
         {

@@ -16,6 +16,16 @@ public class ContainerHandler : MonoBehaviour
     #region MonoBehaviour Functions
     private void Update()
     {
+        //if (lavaTransform.position.y < lavaMaxHeight)
+        //{
+        //    lavaTransform.Translate(Vector3.up * Time.deltaTime * lavaRiseSpeed);
+        //}
+    }
+    #endregion
+
+    #region Public Core Functions
+    public void UpdateLava()
+    {
         if (lavaTransform.position.y < lavaMaxHeight)
         {
             lavaTransform.Translate(Vector3.up * Time.deltaTime * lavaRiseSpeed);

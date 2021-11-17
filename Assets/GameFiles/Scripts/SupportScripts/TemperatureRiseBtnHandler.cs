@@ -22,7 +22,7 @@ public class TemperatureRiseBtnHandler : MonoBehaviour, IPointerClickHandler
     #region Interface Functions
     public void OnPointerClick(PointerEventData eventData)
     {
-        print("Working");
+        Phase2Manager.Instance.GetContainerHandler.UpdateLava();
         LevelUIManager.Instance.TemperatureIncrementPB(Time.deltaTime * temperatureRiseSpeed);
     }
     #endregion
