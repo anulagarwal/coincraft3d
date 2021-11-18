@@ -10,6 +10,7 @@ public class LaserToolHandler : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private GameObject coinDent = null;
+    [SerializeField] private GameObject cutTrail = null;
     #endregion
 
     #region MonoBehviour Functions
@@ -21,6 +22,7 @@ public class LaserToolHandler : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
+            cutTrail.SetActive(false);
             coinDent.SetActive(false);
         }
     }

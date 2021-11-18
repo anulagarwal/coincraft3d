@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 704094866355403248}
   - component: {fileID: 7911165964621631437}
   - component: {fileID: -1785070943845758061}
+  - component: {fileID: 213348524583291389}
   m_Layer: 0
   m_Name: GoldDemo
   m_TagString: Gold
@@ -145,3 +146,17 @@ MonoBehaviour:
   oreType: 0
   rb: {fileID: 61443452}
   oreMovementHandler: {fileID: 7911165964621631437}
+  oreMeltingHandler: {fileID: 213348524583291389}
+--- !u!114 &213348524583291389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704094866355403263}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947b8f7eb49cc7a48a3f52d7251c1b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrinkSpeed: 0.2

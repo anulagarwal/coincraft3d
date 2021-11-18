@@ -10,6 +10,7 @@ public class Phase2Manager : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private GameObject cam1 = null;
     [SerializeField] private GameObject cam2 = null;
+    [SerializeField] private GameObject cam3 = null;
     [SerializeField] private ContainerHandler containerHandler = null;
     #endregion
 
@@ -55,6 +56,16 @@ public class Phase2Manager : MonoBehaviour
     {
         cam1.SetActive(false);
         cam2.SetActive(true);
+        cam3.SetActive(false);
+
+        Invoke("SwitchToCam3", 5f);
+    }
+
+    public void SwitchToCam3()
+    {
+        cam1.SetActive(false);
+        cam2.SetActive(false);
+        cam3.SetActive(true);
     }
     #endregion
 }

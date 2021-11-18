@@ -11,6 +11,7 @@ public class OreCollisionAndTriggerEventsHandler : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private Rigidbody rb = null;
     [SerializeField] private OreMovementHandler oreMovementHandler = null;
+    [SerializeField] private OreMeltingHandler oreMeltingHandler = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -38,6 +39,7 @@ public class OreCollisionAndTriggerEventsHandler : MonoBehaviour
                 Phase2Manager.Instance.RockCollected++;
             }
 
+            oreMeltingHandler.enabled = true;
             Phase2Manager.Instance.CalculatePurity();
 
 
