@@ -53,6 +53,11 @@ public class LevelUIManager : MonoBehaviour
     {
         CoinsManager.Instance.ActiveCoinMark = tex;
     }
+
+    public void OnClick_CoinDentTypeBtn(int type)
+    {
+        LaserToolManager.Instance.EnableLaserMech(type);
+    }
     #endregion
 
     #region Private Core Functions

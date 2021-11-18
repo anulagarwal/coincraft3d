@@ -19,3 +19,9 @@ public enum OreType
     Gold,
     Rock
 };
+
+public enum CoinDentType
+{
+    Circle = 0,
+    Triangle = 1
+};
