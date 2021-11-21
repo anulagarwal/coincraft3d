@@ -26,6 +26,7 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private Image temperaturePB = null;
     [SerializeField] private GameObject purityPBObj = null;
     [SerializeField] private GameObject meltingMechUI = null;
+    [SerializeField] private GameObject freezeBtn = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -57,6 +58,11 @@ public class LevelUIManager : MonoBehaviour
     public void OnClick_CoinDentTypeBtn(int type)
     {
         LaserToolManager.Instance.EnableLaserMech(type);
+    }
+
+    public void OnClick_FreezeCoin()
+    {
+        Phase2Manager.Instance.GetCoinCraftingHandler.Freeze();
     }
     #endregion
 
@@ -143,6 +149,13 @@ public class LevelUIManager : MonoBehaviour
     {
         meltingMechUI.SetActive(value);
         purityPBObj.SetActive(!value);
+    }
+
+    public void DisableMeltingMechPB()
+    {
+        meltingMechUI.SetActive(false);
+        purityPBObj.SetActive(false);
+        freezeBtn.SetActive(true);
     }
     #endregion
 }

@@ -19,7 +19,8 @@ public class OreCollisionAndTriggerEventsHandler : MonoBehaviour
     {
         if (oreType == OreType.Rock)
         {
-            Destroy(this.gameObject);
+            ConveyorBeltMachine.Instance.PauseConveyorBelt(true, this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 

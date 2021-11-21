@@ -13,7 +13,10 @@ public class OreMovementHandler : MonoBehaviour
     #region MonoBehaviour Functions
     private void Update()
     {
-        transform.Translate(movementDirection * Time.deltaTime * moveSpeed);
+        if (!ConveyorBeltMachine.Instance.PauseMachine)
+        {
+            transform.Translate(movementDirection * Time.deltaTime * moveSpeed);
+        }
     }
     #endregion
 }

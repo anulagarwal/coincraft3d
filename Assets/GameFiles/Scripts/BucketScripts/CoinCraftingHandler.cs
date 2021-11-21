@@ -11,6 +11,8 @@ public class CoinCraftingHandler : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private Transform bucket = null;
+    [SerializeField] private GameObject icySpikes = null;
+    [SerializeField] private GameObject coin = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -19,6 +21,27 @@ public class CoinCraftingHandler : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             bucket.Rotate(rotDirection * Time.deltaTime * rotSpeed);
+        }
+    }
+    #endregion
+
+    #region Public Core Functions
+    public void Freeze()
+    {
+        icySpikes.SetActive(true);
+
+        Invoke("DisplayCoin", 5f);
+    }
+    #endregion
+
+    #region Invoke Functions
+    private void DisplayCoin()
+    {
+        coin.SetActive(true);
+        //
+        for (int i = 0; i < bucket.childCount; i++)
+        {
+            bucket.GetChild(i).gameObject.SetActive(false);
         }
     }
     #endregion
