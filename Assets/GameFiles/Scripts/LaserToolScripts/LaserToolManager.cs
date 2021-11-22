@@ -72,7 +72,7 @@ public class LaserToolManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             targetLocation = new Vector3(triangleDentWaypoints[targetLocationIndex].position.x, laserRod.localPosition.y, triangleDentWaypoints[targetLocationIndex].position.z);
-            if (Vector3.Distance(laserRod.localPosition, targetLocation) > 0.2f)
+            if (Vector3.Distance(laserRod.localPosition, targetLocation) > 0.01f)
             {
                 laserRod.localPosition = Vector3.MoveTowards(laserRod.localPosition, targetLocation, Time.deltaTime * moveSpeed);
             }
@@ -83,6 +83,11 @@ public class LaserToolManager : MonoBehaviour
                     targetLocationIndex++;
                 }
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            cutTrail.SetActive(false);
+            coinDent.SetActive(false);
         }
     }
     #endregion

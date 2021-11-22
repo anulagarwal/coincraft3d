@@ -11,8 +11,8 @@ public class CoinCraftingHandler : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private Transform bucket = null;
-    [SerializeField] private GameObject icySpikes = null;
-    [SerializeField] private GameObject coin = null;
+    [SerializeField] private List<GameObject> icySpikes = null;
+    [SerializeField] private List<GameObject> coin = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -28,7 +28,8 @@ public class CoinCraftingHandler : MonoBehaviour
     #region Public Core Functions
     public void Freeze()
     {
-        icySpikes.SetActive(true);
+
+        foreach (GameObject g in icySpikes) { g.SetActive(true); }
 
         Invoke("DisplayCoin", 5f);
     }
@@ -37,8 +38,8 @@ public class CoinCraftingHandler : MonoBehaviour
     #region Invoke Functions
     private void DisplayCoin()
     {
-        coin.SetActive(true);
-        //
+        foreach(GameObject g in coin) { g.SetActive(true); }
+        
         for (int i = 0; i < bucket.childCount; i++)
         {
             bucket.GetChild(i).gameObject.SetActive(false);
