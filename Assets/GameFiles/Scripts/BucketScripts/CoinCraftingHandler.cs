@@ -14,6 +14,7 @@ public class CoinCraftingHandler : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private Transform lavaBucketTransform = null;
     [SerializeField] private List<Transform> pourPoints = new List<Transform>();
+    [SerializeField] private List<Transform> moltenGold = new List<Transform>();
     [SerializeField] private List<Transform> coins = new List<Transform>();
     [SerializeField] private List<GameObject> icySpikes = new List<GameObject>();
     [SerializeField] private BucketAnimationsHandler bucketAnimationsHandler = null;
@@ -75,7 +76,7 @@ public class CoinCraftingHandler : MonoBehaviour
             }
             else
             {
-                coins[targetIndex].Translate(Vector3.up * Time.deltaTime * fillSpeed);
+                moltenGold[targetIndex].Translate(Vector3.up * Time.deltaTime * fillSpeed);
             }
         }
     }
@@ -102,9 +103,11 @@ public class CoinCraftingHandler : MonoBehaviour
 
     public void FreezeCoins()
     {
-        foreach (GameObject obj in icySpikes)
+        for(int i = 0; i < coins.Count; i++)
         {
-            obj.SetActive(true);
+            icySpikes[i].SetActive(true);
+            coins[i].gameObject.SetActive(true);
+            moltenGold[i].gameObject.SetActive(false);
         }
     }
     #endregion
