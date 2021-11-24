@@ -62,7 +62,7 @@ public class LevelUIManager : MonoBehaviour
 
     public void OnClick_FreezeCoin()
     {
-        Phase2Manager.Instance.GetCoinCraftingHandler.Freeze();
+        CoinCraftingHandler.Instance.FreezeCoins();
     }
     #endregion
 
