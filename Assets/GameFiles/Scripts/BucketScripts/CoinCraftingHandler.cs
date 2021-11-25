@@ -103,9 +103,19 @@ public class CoinCraftingHandler : MonoBehaviour
 
     public void FreezeCoins()
     {
+        lavaBucketTransform.gameObject.SetActive(false);
         for(int i = 0; i < coins.Count; i++)
         {
-            icySpikes[i].SetActive(true);
+            icySpikes[i].SetActive(true);           
+        }
+        Invoke("SwitchCoin", 1.4f);
+    }
+
+    public void SwitchCoin()
+    {
+
+        for (int i = 0; i < coins.Count; i++)
+        {
             coins[i].gameObject.SetActive(true);
             moltenGold[i].gameObject.SetActive(false);
         }
