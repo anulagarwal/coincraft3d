@@ -12,12 +12,23 @@ public class LaserToolManager : MonoBehaviour
     [SerializeField] private float moveSpeed = 0f;
 
     [Header("Components Reference")]
+    [SerializeField] private List<GameObject> coinDents = null;
+    [SerializeField] private List<GameObject> coins = null;
+
+
+
     [SerializeField] private GameObject coinDent = null;
     [SerializeField] private GameObject cutTrail = null;
     [SerializeField] private Transform laserRod = null;
 
     [Header("Dent Waypoints")]
     [SerializeField] private List<Transform> triangleDentWaypoints = new List<Transform>();
+    [SerializeField] private List<Transform> triangleDentWaypoints_0 = new List<Transform>();
+    [SerializeField] private List<Transform> triangleDentWaypoints_1 = new List<Transform>();
+    [SerializeField] private List<Transform> triangleDentWaypoints_2 = new List<Transform>();
+
+
+
 
     private int targetLocationIndex = 0;
     private Vector3 targetLocation = Vector3.zero;
@@ -95,7 +106,7 @@ public class LaserToolManager : MonoBehaviour
     #region Public Core Functions
     public void EnableLaserMech(int type)
     {
-        switch (type)
+       /* switch (type)
         {
             case (int)CoinDentType.Circle:
                 laserMechanism += CircleDent;
@@ -103,7 +114,28 @@ public class LaserToolManager : MonoBehaviour
             case (int)CoinDentType.Triangle:
                 laserMechanism += TriangleDent;
                 break;
+        }*/
+        foreach(GameObject g in coins)
+        {
+            g.SetActive(false);
         }
+                laserMechanism += TriangleDent;
+
+        coinDent = coinDents[type];       
+        coins[type].SetActive(true);
+        switch (type)
+        {
+            case 0:
+                triangleDentWaypoints = triangleDentWaypoints_0;
+                break;
+            case 1:
+                triangleDentWaypoints = triangleDentWaypoints_1;
+                break;
+            case 2:
+                triangleDentWaypoints = triangleDentWaypoints_2;
+                break;
+        }
+
     }
     #endregion
 }
