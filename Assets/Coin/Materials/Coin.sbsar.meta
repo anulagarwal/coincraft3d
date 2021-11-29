@@ -134,10 +134,11 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
-  version: 23
+  version: 29
+  projectContext: 2
   mGraphInstanceData:
   - graphLabel: Coin
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -145,15 +146,21 @@ ScriptedImporter:
       uid=\"1181479073\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"Metal\"
       uid=\"836148447\" type=\"4\" value=\"2\" />\n  <presetinput identifier=\"Numbers\"
       uid=\"835960211\" type=\"4\" value=\"2\" />\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: 2000
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 6128893749245257469, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 7085496533566872384, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 7085496533566872384, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -173,13 +180,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: 6128893749245257469, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 4762819252077169644, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 4762819252077169644, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -190,44 +195,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 0.88
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 0.9811321, g: 0.82821035, b: 0, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -261,7 +306,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -287,26 +332,10 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin - baseColor
       wrapMode: 0
       filterMode: 1
-      aniso: 1
+      aniso: 0
     - textureName: Coin - normal
       wrapMode: 0
       filterMode: 1
@@ -346,27 +375,32 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: -4342424911767312120, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: -4342424911767312120, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: 6128893749245257469, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 7085496533566872384, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 4762819252077169644, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
   - graphLabel: Coin_1
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Coin\" label=\"\" >\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 2850385920250921041, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 522384518115752588, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 522384518115752588, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -386,13 +420,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: 2850385920250921041, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: -8173758131309072727, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: -8173758131309072727, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -403,44 +435,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -474,7 +546,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -500,22 +572,6 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_1_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_1_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_1_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_1_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin_1 - baseColor
       wrapMode: 0
       filterMode: 1
@@ -559,14 +615,13 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: 7201595261841421126, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: 7201595261841421126, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: 2850385920250921041, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 522384518115752588, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: -8173758131309072727, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
   - graphLabel: Coin_2
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -574,15 +629,21 @@ ScriptedImporter:
       uid=\"1181479073\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"Metal\"
       uid=\"836148447\" type=\"4\" value=\"3\" />\n  <presetinput identifier=\"Numbers\"
       uid=\"835960211\" type=\"4\" value=\"3\" />\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 5057339577587388331, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 2646043824924167684, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 2646043824924167684, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -602,13 +663,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: 5057339577587388331, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 7429957491593828505, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 7429957491593828505, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -619,44 +678,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -690,7 +789,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -716,22 +815,6 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_2_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_2_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_2_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_2_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin_2 - baseColor
       wrapMode: 0
       filterMode: 1
@@ -775,29 +858,34 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: -7844776221964299340, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: -7844776221964299340, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: 5057339577587388331, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 2646043824924167684, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 7429957491593828505, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
   - graphLabel: Coin_3
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://Coin\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
       uid=\"1181479073\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"Icons\"
       uid=\"836146147\" type=\"4\" value=\"2\" />\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: 2000
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 8409584000816680786, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 4881242422546704022, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 4881242422546704022, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -817,13 +905,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: 8409584000816680786, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 1423209658507462102, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 1423209658507462102, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -834,44 +920,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -905,7 +1031,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -931,22 +1057,6 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_3_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_3_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_3_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_3_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin_3 - baseColor
       wrapMode: 0
       filterMode: 1
@@ -990,14 +1100,13 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: -7253893060265919711, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: -7253893060265919711, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: 8409584000816680786, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 4881242422546704022, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 1423209658507462102, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
   - graphLabel: Coin_4
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -1009,15 +1118,21 @@ ScriptedImporter:
       />\n  <presetinput identifier=\"Pictures\" uid=\"835752886\" type=\"4\" value=\"4\"
       />\n  <presetinput identifier=\"Numbers\" uid=\"835960211\" type=\"4\" value=\"4\"
       />\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 1135796108673702334, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 5316994117478287730, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 5316994117478287730, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -1037,13 +1152,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: 1135796108673702334, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 2876442039245512838, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 2876442039245512838, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -1054,44 +1167,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -1125,7 +1278,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -1151,22 +1304,6 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_4_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_4_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_4_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_4_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin_4 - baseColor
       wrapMode: 0
       filterMode: 1
@@ -1210,14 +1347,13 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: 5670060782820005435, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: 5670060782820005435, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: 1135796108673702334, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 5316994117478287730, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 2876442039245512838, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
   - graphLabel: Coin_5
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -1227,15 +1363,21 @@ ScriptedImporter:
       uid=\"823734711\" type=\"3\" value=\"0.858824,0.862745,0.870588,1\" />\n  <presetinput
       identifier=\"Icons\" uid=\"836146147\" type=\"4\" value=\"3\" />\n  <presetinput
       identifier=\"Numbers\" uid=\"835960211\" type=\"4\" value=\"2\" />\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: -7982394822016216554, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: 6337452107933103281, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 6337452107933103281, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -1255,13 +1397,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: -7982394822016216554, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: -5775327940046549299, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: -5775327940046549299, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -1272,44 +1412,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -1343,7 +1523,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -1369,22 +1549,6 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_5_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_5_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_5_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_5_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin_5 - baseColor
       wrapMode: 0
       filterMode: 1
@@ -1402,10 +1566,7 @@ ScriptedImporter:
       filterMode: 1
       aniso: 1
     colorSpaceList: []
-    inputTextureMap:
-    - inputName: input
-      texturePath: Assets/Coin/Masks/MASK_Example.png
-      texture2D: {fileID: 2800000, guid: a02d44f1744af204680e179b68dfecea, type: 3}
+    inputTextureMap: []
     targetSettingList:
     - label: Default
       bOverride: 0
@@ -1431,14 +1592,13 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: 2469012811314293890, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: 2469012811314293890, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: -7982394822016216554, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: 6337452107933103281, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: -5775327940046549299, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
   - graphLabel: Coin_6
-    prototypeName: 
+    prototypeName: Coin
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -1446,15 +1606,21 @@ ScriptedImporter:
       uid=\"1181479073\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"Icons\"
       uid=\"836146147\" type=\"4\" value=\"4\" />\n  <presetinput identifier=\"Numbers\"
       uid=\"835960211\" type=\"4\" value=\"2\" />\n </sbspreset>\n"
-    shaderName: Standard
+    shaderName: Universal Render Pipeline/Lit
     materialProperties:
-      shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP
+      shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP
       lightmapFlags: 4
+      enableInstancingVariants: 0
+      doubleSidedGI: 0
+      customRenderQueue: -1
       texEnvs:
+      - name: _BaseMap
+        texture: {fileID: 5978007407290779750, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: -3979360049918536352, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: -3979360049918536352, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _DetailAlbedoMap
@@ -1474,13 +1640,11 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: 5978007407290779750, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 5941354978842831388, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-          type: 3}
+        texture: {fileID: 5941354978842831388, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
@@ -1491,44 +1655,84 @@ ScriptedImporter:
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+      - name: _SpecGlossMap
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_Lightmaps
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_LightmapsInd
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
+      - name: unity_ShadowMasks
+        texture: {instanceID: 0}
+        scale: {x: 1, y: 1}
+        offset: {x: 0, y: 0}
       floats:
+      - name: _AlphaClip
+        float: 0
+      - name: _Blend
+        float: 0
       - name: _BumpScale
         float: 1
+      - name: _ClearCoatMask
+        float: 0
+      - name: _ClearCoatSmoothness
+        float: 0
+      - name: _Cull
+        float: 2
       - name: _Cutoff
         float: 0.5
+      - name: _DetailAlbedoMapScale
+        float: 1
       - name: _DetailNormalMapScale
         float: 1
       - name: _DstBlend
         float: 0
+      - name: _EnvironmentReflections
+        float: 1
       - name: _GlossMapScale
-        float: 1
-      - name: _Glossiness
-        float: 0.5
-      - name: _GlossyReflections
-        float: 1
-      - name: _Metallic
         float: 0
-      - name: _Mode
+      - name: _Glossiness
+        float: 0
+      - name: _GlossyReflections
+        float: 0
+      - name: _Metallic
         float: 0
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
-        float: 0.02
+        float: 0.005
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
-      - name: _UVSec
+      - name: _Surface
         float: 0
+      - name: _WorkflowMode
+        float: 1
       - name: _ZWrite
         float: 1
       colors:
+      - name: _BaseColor
+        color: {r: 1, g: 1, b: 1, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
         color: {r: 0, g: 0, b: 0, a: 1}
+      - name: _SpecColor
+        color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
     - outputName: baseColor
       identifier: basecolor
@@ -1562,7 +1766,7 @@ ScriptedImporter:
       usageName: metallic
       channelStr: metallic
       label: Metallic
-      usage: 28
+      usage: 34
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -1588,22 +1792,6 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Coin_6_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_6_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_6_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Coin_6_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Coin_6 - baseColor
       wrapMode: 0
       filterMode: 1
@@ -1647,8 +1835,7 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 0
-    material: {fileID: -3121820714403431668, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80,
-      type: 3}
+    material: {fileID: -3121820714403431668, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     generatedTextures:
     - {fileID: 5978007407290779750, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}
     - {fileID: -3979360049918536352, guid: 6b25a1b2bfcfd4e4bab55dec2b11dd80, type: 3}

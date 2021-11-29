@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 4380502992048420
   appLabels:
-  - Your App Name
+  - Coin Craft 3D
   cookie: 1
   logging: 1
   status: 1

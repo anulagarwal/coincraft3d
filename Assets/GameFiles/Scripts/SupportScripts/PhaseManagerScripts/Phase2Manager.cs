@@ -29,6 +29,7 @@ public class Phase2Manager : MonoBehaviour
     {
         GoldCollected = 0;
         RockCollected = 0;
+        PlayerPrefs.SetInt("CollectedGold", 13);
     }
     #endregion
 

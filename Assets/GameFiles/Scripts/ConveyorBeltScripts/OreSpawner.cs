@@ -7,7 +7,7 @@ public class OreSpawner : MonoBehaviour
     #region Properties
     [Header("Attributes")]
     [SerializeField] private float spawnSpeed = 0f;
-    [SerializeField] private int spawnAmount = 0;
+    [SerializeField] private int spawnAmount = 20;
     [SerializeField] private float spawnXLimit = 0f;
 
     [Header("Components Reference")]
@@ -23,6 +23,8 @@ public class OreSpawner : MonoBehaviour
         nextTimeToSpawn = spawnSpeed;
 
         //Testing
+        PlayerPrefs.SetInt("CollectedGold", 13);
+
         spawnAmount = PlayerPrefs.GetInt("CollectedGold");
     }
 

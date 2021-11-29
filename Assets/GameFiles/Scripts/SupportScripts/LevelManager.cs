@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
         Instance = this;
+        TinySauce.OnGameStarted();
     }
     #endregion
 }
