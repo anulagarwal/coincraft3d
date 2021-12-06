@@ -25,3 +25,9 @@ public enum CoinDentType
     Circle = 0,
     Triangle = 1
 };
+
+public enum CharacterState
+{
+    Curious,
+    Clap
+};

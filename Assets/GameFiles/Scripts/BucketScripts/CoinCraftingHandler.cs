@@ -119,6 +119,8 @@ public class CoinCraftingHandler : MonoBehaviour
             coins[i].gameObject.SetActive(true);
             moltenGold[i].gameObject.SetActive(false);
         }
+
+        CharacterSingleton.Instance.GetCharacterAnimationsHandler.SwitchCharacterAnimation(CharacterState.Clap);
     }
     #endregion
 
