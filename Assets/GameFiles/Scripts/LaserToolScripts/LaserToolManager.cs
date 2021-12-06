@@ -14,6 +14,8 @@ public class LaserToolManager : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private List<GameObject> coinDents = null;
     [SerializeField] private List<GameObject> coins = null;
+    [SerializeField] private GameObject confetti = null;
+
 
 
 
@@ -75,6 +77,7 @@ public class LaserToolManager : MonoBehaviour
         {
             cutTrail.SetActive(false);
             coinDent.SetActive(false);
+            
         }
     }
 
@@ -83,7 +86,7 @@ public class LaserToolManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             targetLocation = new Vector3(triangleDentWaypoints[targetLocationIndex].position.x, laserRod.localPosition.y, triangleDentWaypoints[targetLocationIndex].position.z);
-            if (Vector3.Distance(laserRod.localPosition, targetLocation) > 0.01f)
+            if (Vector3.Distance(laserRod.localPosition, targetLocation) > 0.005f)
             {
                 laserRod.localPosition = Vector3.MoveTowards(laserRod.localPosition, targetLocation, Time.deltaTime * moveSpeed);
             }
@@ -99,6 +102,8 @@ public class LaserToolManager : MonoBehaviour
         {
             cutTrail.SetActive(false);
             coinDent.SetActive(false);
+            confetti.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
     #endregion
