@@ -9,6 +9,7 @@ public class CharacterSingleton : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private CharacterAnimationsHandler characterAnimationsHandler = null;
+    [SerializeField] private CharacterSpeechHandler characterSpeechHandler = null;
     #endregion
 
     #region MonoBehaviour Functions
@@ -24,5 +25,10 @@ public class CharacterSingleton : MonoBehaviour
 
     #region Getter And Setter
     public CharacterAnimationsHandler GetCharacterAnimationsHandler { get => characterAnimationsHandler; }
+    
+    public CharacterSpeechHandler GetCharacterSpeechHandler { get => characterSpeechHandler; }
+    #endregion
+
+    #region Public Core Functions
     #endregion
 }
