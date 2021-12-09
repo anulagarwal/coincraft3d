@@ -19,9 +19,16 @@ public class CharacterSpeechHandler : MonoBehaviour
     {
         EnableSpeechCloud(false);
         speehCloudTxt.SetText(txt);
+        
     }
     #endregion
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            EnableSpeechCloud(true);
+        }
+    }
     #region Public Core Functions
     public void EnableSpeechCloud(bool value)
     {
