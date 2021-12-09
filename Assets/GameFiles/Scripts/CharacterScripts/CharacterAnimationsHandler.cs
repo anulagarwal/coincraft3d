@@ -15,9 +15,13 @@ public class CharacterAnimationsHandler : MonoBehaviour
         switch (state)
         {
             case CharacterState.Curious:
+                animator.SetBool("b_Walk", false);
                 break;
             case CharacterState.Clap:
                 animator.SetTrigger("t_Clap");
+                break;
+            case CharacterState.Walk:
+                animator.SetBool("b_Walk", true);
                 break;
         }
     }

@@ -1955,6 +1955,7 @@ GameObject:
   - component: {fileID: 2762411253831567748}
   - component: {fileID: 2762411253831567749}
   - component: {fileID: 4818530858443975492}
+  - component: {fileID: 3580123677758005315}
   m_Layer: 0
   m_Name: TPFemaleA (19)
   m_TagString: Untagged
@@ -2364,6 +2365,18 @@ MonoBehaviour:
   txt: How interesting?
   speechCloud: {fileID: 15668916}
   speehCloudTxt: {fileID: 1881359437}
+--- !u!114 &3580123677758005315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867161747014295159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edde986eb59979d478c6ebba53c9efe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2867162920183265017
 GameObject:
   m_ObjectHideFlags: 0

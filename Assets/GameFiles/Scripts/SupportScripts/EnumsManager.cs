@@ -29,5 +29,6 @@ public enum CoinDentType
 public enum CharacterState
 {
     Curious,
-    Clap
+    Clap,
+    Walk
 };
