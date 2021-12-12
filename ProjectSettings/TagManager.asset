@@ -16,6 +16,7 @@ TagManager:
   - MoltenGold
   - Lava
   - BucketThreshold
+  - MetalLiquid
   layers:
   - Default
   - TransparentFX

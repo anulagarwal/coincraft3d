@@ -20,6 +20,7 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private GameObject phase_3 = null;
     [SerializeField] private GameObject phase_4 = null;
     [SerializeField] private GameObject phase_5 = null;
+    [SerializeField] private GameObject phase_6 = null;
 
     [Header("Phase 2 Components Reference")]
     [SerializeField] private Image purityCheckBar = null;
@@ -60,9 +61,24 @@ public class LevelUIManager : MonoBehaviour
         LaserToolManager.Instance.EnableLaserMech(type);
     }
 
+    public void OnClick_Dip()
+    {
+        CoinHolderHandler.Instance.Dip();
+    }
+
     public void OnClick_FreezeCoin()
     {
         CoinCraftingHandler.Instance.FreezeCoins();
+    }
+
+    public void OnClick_MoveCoinHolderLeftBtn()
+    {
+        CoinHolderHandler.Instance.EnableRelocation(Relocation.Left, true);
+    }
+
+    public void OnClick_MoveCoinHolderRightBtn()
+    {
+        CoinHolderHandler.Instance.EnableRelocation(Relocation.Right, true);
     }
     #endregion
 
@@ -77,6 +93,7 @@ public class LevelUIManager : MonoBehaviour
                 phase_3.SetActive(false);
                 phase_4.SetActive(false);
                 phase_5.SetActive(false);
+                phase_6.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_2:
                 phase_1.SetActive(false);
@@ -84,6 +101,7 @@ public class LevelUIManager : MonoBehaviour
                 phase_3.SetActive(false);
                 phase_4.SetActive(false);
                 phase_5.SetActive(false);
+                phase_6.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_3:
                 phase_1.SetActive(false);
@@ -91,6 +109,7 @@ public class LevelUIManager : MonoBehaviour
                 phase_3.SetActive(true);
                 phase_4.SetActive(false);
                 phase_5.SetActive(false);
+                phase_6.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_4:
                 phase_1.SetActive(false);
@@ -98,6 +117,7 @@ public class LevelUIManager : MonoBehaviour
                 phase_3.SetActive(false);
                 phase_4.SetActive(true);
                 phase_5.SetActive(false);
+                phase_6.SetActive(false);
                 break;
             case UIGameplayPhase.Phase_5:
                 phase_1.SetActive(false);
@@ -105,6 +125,15 @@ public class LevelUIManager : MonoBehaviour
                 phase_3.SetActive(false);
                 phase_4.SetActive(false);
                 phase_5.SetActive(true);
+                phase_6.SetActive(false);
+                break;
+            case UIGameplayPhase.Phase_6:
+                phase_1.SetActive(false);
+                phase_2.SetActive(false);
+                phase_3.SetActive(false);
+                phase_4.SetActive(false);
+                phase_5.SetActive(false);
+                phase_6.SetActive(true);
                 break;
         }
     }
