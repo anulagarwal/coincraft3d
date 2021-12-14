@@ -18,6 +18,7 @@ public class CoinCraftingHandler : MonoBehaviour
     [SerializeField] private List<Transform> coins = new List<Transform>();
     [SerializeField] private List<GameObject> icySpikes = new List<GameObject>();
     [SerializeField] private BucketAnimationsHandler bucketAnimationsHandler = null;
+    [SerializeField] private Animator goldTrayAnimator = null;
 
     private int targetIndex = 0;
     #endregion
@@ -121,6 +122,11 @@ public class CoinCraftingHandler : MonoBehaviour
         }
 
         CharacterSingleton.Instance.GetCharacterAnimationsHandler.SwitchCharacterAnimation(CharacterState.Clap);
+        foreach (Transform t in coins)
+        {
+            t.gameObject.AddComponent<Rigidbody>();
+        }
+        goldTrayAnimator.SetTrigger("t_Flip");
     }
     #endregion
 
