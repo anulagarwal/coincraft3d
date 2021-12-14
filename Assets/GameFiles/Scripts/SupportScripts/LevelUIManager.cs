@@ -22,6 +22,10 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private GameObject phase_5 = null;
     [SerializeField] private GameObject phase_6 = null;
 
+    [Header("UI Panels")]
+    [SerializeField] private GameObject victoryUI = null;
+    [SerializeField] private GameObject failUI = null;
+
     [Header("Phase 2 Components Reference")]
     [SerializeField] private Image purityCheckBar = null;
     [SerializeField] private Image temperaturePB = null;
@@ -80,6 +84,23 @@ public class LevelUIManager : MonoBehaviour
     {
         CoinHolderHandler.Instance.EnableRelocation(Relocation.Right, true);
     }
+
+    public void OnClick_RelocateCoinToBucket()
+    {
+        CoinHolderHandler.Instance.EnableRelocation(Relocation.Bucket, true);
+    }
+
+    public void OnClick_HackBtn(int i)
+    {
+        if (i == 0)
+        {
+            DisplayFailUI();
+        }
+        else
+        {
+            DisplayVictoryUI();
+        }
+    }
     #endregion
 
     #region Private Core Functions
@@ -135,6 +156,14 @@ public class LevelUIManager : MonoBehaviour
                 phase_5.SetActive(false);
                 phase_6.SetActive(true);
                 break;
+            case UIGameplayPhase.None:
+                phase_1.SetActive(false);
+                phase_2.SetActive(false);
+                phase_3.SetActive(false);
+                phase_4.SetActive(false);
+                phase_5.SetActive(false);
+                phase_6.SetActive(false);
+                break;
         }
     }
     #endregion
@@ -143,6 +172,16 @@ public class LevelUIManager : MonoBehaviour
     public void UpdateGoldCount(int count)
     {
         goldCountTxt.SetText(count.ToString());
+    }
+
+    public void DisplayFailUI()
+    {
+        failUI.SetActive(true);
+    }
+
+    public void DisplayVictoryUI()
+    {
+        victoryUI.SetActive(true);
     }
 
     public void UpdatePurityCheckBar(float amount)

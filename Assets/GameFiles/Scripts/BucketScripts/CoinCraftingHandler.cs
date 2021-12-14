@@ -19,6 +19,7 @@ public class CoinCraftingHandler : MonoBehaviour
     [SerializeField] private List<GameObject> icySpikes = new List<GameObject>();
     [SerializeField] private BucketAnimationsHandler bucketAnimationsHandler = null;
     [SerializeField] private Animator goldTrayAnimator = null;
+    [SerializeField] private GameObject cmcv_4_bucket = null;
 
     private int targetIndex = 0;
     #endregion
@@ -127,6 +128,7 @@ public class CoinCraftingHandler : MonoBehaviour
             t.gameObject.AddComponent<Rigidbody>();
         }
         goldTrayAnimator.SetTrigger("t_Flip");
+        cmcv_4_bucket.gameObject.SetActive(true);
     }
     #endregion
 

@@ -12,7 +12,8 @@ public enum UIGameplayPhase
     Phase_3,
     Phase_4,
     Phase_5,
-    Phase_6
+    Phase_6,
+    None
 };
 
 public enum OreType
@@ -45,5 +46,6 @@ public enum Relocation
 {
     Left,
     Right,
+    Bucket,
     None
 };

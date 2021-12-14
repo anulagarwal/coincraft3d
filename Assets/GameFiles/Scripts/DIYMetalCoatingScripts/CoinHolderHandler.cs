@@ -13,7 +13,11 @@ public class CoinHolderHandler : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private Animator coinHolderAnimator = null;
     [SerializeField] private List<Transform> points = new List<Transform>();
+    [SerializeField] private Transform bucketTransform = null;
+    [SerializeField] private List<Transform> coins = new List<Transform>();
+    [SerializeField] private CoinLocTriggerEventsHandler coinLocTriggerEventsHandler = null;
 
+    private int activeCoinIndex = 0;
     private int activePointIndex = 0;
     #endregion
 
@@ -42,6 +46,9 @@ public class CoinHolderHandler : MonoBehaviour
     }
     #endregion
 
+    #region Getter And Setter
+    #endregion
+
     #region Private Core Functions
     private void RelocationCore()
     {
@@ -52,6 +59,18 @@ public class CoinHolderHandler : MonoBehaviour
         else
         {
             EnableRelocation(Relocation.None, false);
+        }
+    }
+
+    private void RelocationToBucket()
+    {
+        if (Vector3.Distance(transform.position, bucketTransform.position) >= 0.05f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, bucketTransform.position, Time.deltaTime * relocationSpeed);
+        }
+        else
+        {
+            EnableRelocation(Relocation.Bucket, false);
         }
     }
     #endregion
@@ -66,22 +85,48 @@ public class CoinHolderHandler : MonoBehaviour
                 {
                     activePointIndex--;
                 }
+                if (value)
+                {
+                    relocate += RelocationCore;
+                }
+                else
+                {
+                    relocate -= RelocationCore;
+                }
                 break;
             case Relocation.Right:
                 if (activePointIndex < points.Count - 1)
                 {
                     activePointIndex++;
                 }
+                if (value)
+                {
+                    relocate += RelocationCore;
+                }
+                else
+                {
+                    relocate -= RelocationCore;
+                }
                 break;
-        }
-
-        if (value)
-        {
-            relocate += RelocationCore;
-        }
-        else
-        {
-            relocate -= RelocationCore;
+            case Relocation.Bucket:
+                relocate = null;
+                if (value)
+                {
+                    relocate += RelocationToBucket;
+                }
+                else
+                {
+                    coins[activeCoinIndex].gameObject.AddComponent<Rigidbody>();
+                    coins[activeCoinIndex].transform.parent = null;
+                    activeCoinIndex++;
+                    if (activeCoinIndex < coins.Count)
+                    {
+                        coins[activeCoinIndex].gameObject.SetActive(true);
+                        coinLocTriggerEventsHandler.meshRenderer = coins[activeCoinIndex].GetComponent<MeshRenderer>();
+                    }
+                    relocate -= RelocationToBucket;
+                }
+                break;
         }
     }
 

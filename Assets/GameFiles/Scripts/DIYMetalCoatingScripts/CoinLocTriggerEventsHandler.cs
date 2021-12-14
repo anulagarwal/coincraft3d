@@ -6,7 +6,7 @@ public class CoinLocTriggerEventsHandler : MonoBehaviour
 {
     #region Properties
     [Header("Components Reference")]
-    [SerializeField] private MeshRenderer meshRenderer = null;
+    [SerializeField] internal MeshRenderer meshRenderer = null;
     [SerializeField] private ParticleSystem silverCoatDrops = null;
     [SerializeField] private ParticleSystem goldCoatDrops = null;
     [SerializeField] private ParticleSystem copperCoatDrops = null;
