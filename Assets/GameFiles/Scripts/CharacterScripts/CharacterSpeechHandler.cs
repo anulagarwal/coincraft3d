@@ -11,6 +11,7 @@ public class CharacterSpeechHandler : MonoBehaviour
 
     [Header("Components Reference")]
     [SerializeField] private GameObject speechCloud = null;
+    [SerializeField] private GameObject buttonContinue = null;
     [SerializeField] private TextMeshProUGUI speehCloudTxt = null;
     #endregion
 
@@ -18,8 +19,7 @@ public class CharacterSpeechHandler : MonoBehaviour
     private void Start()
     {
         EnableSpeechCloud(false);
-        speehCloudTxt.SetText(txt);
-        
+        speehCloudTxt.SetText(txt);        
     }
     #endregion
     private void Update()
@@ -32,7 +32,8 @@ public class CharacterSpeechHandler : MonoBehaviour
     #region Public Core Functions
     public void EnableSpeechCloud(bool value)
     {
-        speechCloud.SetActive(value);
+        buttonContinue.SetActive(value);
+        speechCloud.SetActive(value); 
     }
     #endregion
 }

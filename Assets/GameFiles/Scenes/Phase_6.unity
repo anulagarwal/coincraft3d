@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 25052293}
   - component: {fileID: 25052292}
   - component: {fileID: 25052291}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Color
   m_TagString: MetalLiquid
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 245505750}
   - component: {fileID: 245505749}
   - component: {fileID: 245505751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoatingCoin (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 452560732}
   - component: {fileID: 452560731}
   - component: {fileID: 452560730}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Color
   m_TagString: MetalLiquid
   m_Icon: {fileID: 0}
@@ -5893,8 +5893,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Radius: 0.16522753
+  m_Center: {x: 0, y: 0.3323363, z: 0}
 --- !u!54 &988031412
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6143,7 +6143,7 @@ GameObject:
   - component: {fileID: 1500359725}
   - component: {fileID: 1500359724}
   - component: {fileID: 1500359726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoatingCoin (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6498,7 +6498,7 @@ GameObject:
   - component: {fileID: 1801612957}
   - component: {fileID: 1801612956}
   - component: {fileID: 1801612958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoatingCoin (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16612,7 +16612,7 @@ GameObject:
   - component: {fileID: 3469287837657996235}
   - component: {fileID: 1711813854937280257}
   - component: {fileID: 919132148006342357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoatingCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16897,7 +16897,7 @@ GameObject:
   - component: {fileID: 3632807202043312776}
   - component: {fileID: 3632807202043312775}
   - component: {fileID: 3632807202043312774}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Color
   m_TagString: MetalLiquid
   m_Icon: {fileID: 0}
