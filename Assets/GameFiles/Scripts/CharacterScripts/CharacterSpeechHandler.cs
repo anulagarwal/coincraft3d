@@ -19,7 +19,7 @@ public class CharacterSpeechHandler : MonoBehaviour
     private void Start()
     {
         EnableSpeechCloud(false);
-        speehCloudTxt.SetText(txt);        
+        //speehCloudTxt.SetText(txt);        
     }
     #endregion
     private void Update()

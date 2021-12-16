@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -795,6 +795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TPFemaleA (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2867161747014295159, guid: 9cdd8ef016934f5488df289d78a00c15, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4818530858443975492, guid: 9cdd8ef016934f5488df289d78a00c15, type: 3}
       propertyPath: txt
       value: HI, can I get some gold Bitcoins?
@@ -977,7 +981,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 87420cc2b821a4c4bb1054abb5785d49, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2b06bba554d514f87b02b95cd741d0a7, type: 2}
+      objectReference: {fileID: 2100000, guid: 1b50a5fc1c3a44a3098144256a3e6f69, type: 2}
     - target: {fileID: 919132149155446097, guid: 87420cc2b821a4c4bb1054abb5785d49, type: 3}
       propertyPath: m_Name
       value: Litecoin_Carved
@@ -1341,7 +1345,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8b266536f85df6e4589165eda9e1717a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: abdc69fe04de44785b21e42c893993d6, type: 2}
+      objectReference: {fileID: 2100000, guid: 1b50a5fc1c3a44a3098144256a3e6f69, type: 2}
     - target: {fileID: 919132149155446097, guid: 8b266536f85df6e4589165eda9e1717a, type: 3}
       propertyPath: m_Name
       value: ETH_Carved
@@ -1686,8 +1690,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545316145}
-  m_LocalRotation: {x: 0.06519881, y: 0.6546707, z: -0.07463197, w: 0.74939007}
-  m_LocalPosition: {x: -2.7, y: 5.45, z: -15.92}
+  m_LocalRotation: {x: -0.000000009615862, y: 0.76107985, z: -0.6486582, w: -0.000000011282424}
+  m_LocalPosition: {x: 0, y: 6.23, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 945111612}
@@ -9179,7 +9183,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 6c665ae83dd5e4540a6761c11d9d5f13, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2b06bba554d514f87b02b95cd741d0a7, type: 2}
+      objectReference: {fileID: 2100000, guid: 1b50a5fc1c3a44a3098144256a3e6f69, type: 2}
     - target: {fileID: 919132149155446097, guid: 6c665ae83dd5e4540a6761c11d9d5f13, type: 3}
       propertyPath: m_Name
       value: Bitcoin_Carved
@@ -9666,7 +9670,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036710678}
-  m_LocalRotation: {x: 0.000000025554371, y: 0.7610799, z: -0.6486582, w: 0.000000029983305}
+  m_LocalRotation: {x: -0.000000009615862, y: 0.76107985, z: -0.6486582, w: -0.000000011282424}
   m_LocalPosition: {x: 0, y: 6.23, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

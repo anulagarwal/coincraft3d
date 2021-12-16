@@ -9,6 +9,21 @@ public class CoinHolderHandler : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float relocationSpeed = 0f;
+    [SerializeField] private MetalLiquidType lastColor;
+    [SerializeField] private int bronzeNeeded=2;
+    [SerializeField] private int goldNeeded=2;
+    [SerializeField] private int silverNeeded=0;
+
+    [SerializeField] private int bronzeCollected=0;
+    [SerializeField] private int silverCollected=0;
+    [SerializeField] private int goldCollected=0;
+
+    [SerializeField] private int coinsDone = 0;
+
+
+
+
+
 
     [Header("Components Reference")]
     [SerializeField] private Animator coinHolderAnimator = null;
@@ -35,6 +50,7 @@ public class CoinHolderHandler : MonoBehaviour
             Destroy(gameObject);
         }
         Instance = this;
+        lastColor = MetalLiquidType.Gold;
     }
 
     private void Update()
@@ -71,6 +87,83 @@ public class CoinHolderHandler : MonoBehaviour
         else
         {
             EnableRelocation(Relocation.Bucket, false);
+            coinsDone++;
+            switch (lastColor)
+            {
+                case MetalLiquidType.Gold:
+                    goldCollected++;
+                    if (goldCollected >= goldNeeded)
+                    {
+                        LevelUIManager.Instance.EnableGoldCheck();
+                        LevelUIManager.Instance.UpdateGoldText("");
+
+                    }
+                    else
+                    {
+                        if (coinsDone >= coins.Count)
+                        {
+                            LevelUIManager.Instance.EnableGoldCross();
+
+                        }
+                        else
+                        {
+                            LevelUIManager.Instance.UpdateGoldText("x" + Mathf.Max(0, goldNeeded - goldCollected));
+
+                        }
+                    }
+                    break;
+
+                case MetalLiquidType.Copper:
+                    bronzeCollected++;
+                    if (bronzeCollected >= bronzeNeeded)
+                    {
+                        LevelUIManager.Instance.UpdateBronzeText("");
+                        LevelUIManager.Instance.EnableBronzeCheck();
+                    }
+                    else
+                    { 
+                        if (coinsDone >= coins.Count)
+                        {
+                            LevelUIManager.Instance.EnableBronzeCross();
+
+                        }
+                        else
+                        {
+                            LevelUIManager.Instance.UpdateBronzeText("x" + Mathf.Max(0, bronzeNeeded - bronzeCollected));
+
+                        }
+
+                    }
+                    break;
+
+                case MetalLiquidType.Silver:
+                    silverCollected++;
+                    if (silverCollected >= silverNeeded)
+                    {
+                        LevelUIManager.Instance.EnableBronzeCheck();
+                        LevelUIManager.Instance.UpdateBronzeText("");
+
+                    }
+                    else
+                    {
+                    
+                        if (coinsDone >= coins.Count)
+                        {
+
+                            LevelUIManager.Instance.EnableBronzeCross();
+                        }
+                        {
+                            LevelUIManager.Instance.UpdateBronzeText("x" + Mathf.Max(0, bronzeNeeded - bronzeCollected));
+                        }
+                    }
+                    break;
+
+            }
+            if(silverCollected==silverNeeded && goldCollected == goldNeeded && bronzeCollected== bronzeNeeded)
+            {
+                LevelUIManager
+                    .Instance.DisableDIYBox();
+            }
         }
     }
     #endregion
@@ -126,7 +219,20 @@ public class CoinHolderHandler : MonoBehaviour
                     }
                     relocate -= RelocationToBucket;
                 }
-                break;
+
+                break;               
+        }
+        if (activePointIndex == 0)
+        {
+            lastColor = MetalLiquidType.Gold;
+        }
+        if (activePointIndex == 1)
+        {
+            lastColor = MetalLiquidType.Copper;
+        }
+        if (activePointIndex == 2)
+        {
+            lastColor = MetalLiquidType.Silver;
         }
     }
 

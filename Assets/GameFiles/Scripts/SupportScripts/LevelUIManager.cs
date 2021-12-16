@@ -32,6 +32,24 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private GameObject purityPBObj = null;
     [SerializeField] private GameObject meltingMechUI = null;
     [SerializeField] private GameObject freezeBtn = null;
+    [SerializeField] private GameObject freezeText = null;
+
+    [Header("Phase 6 Com")]
+    [SerializeField] private Text bronzeText;
+    [SerializeField] private Text goldText;
+    [SerializeField] private GameObject goldCheck;
+    [SerializeField] private GameObject bronzeCheck;
+    [SerializeField] private GameObject goldCross;
+    [SerializeField] private GameObject bronzeCross;
+    [SerializeField] private GameObject DIYBox;
+    [SerializeField] private GameObject WellDone;
+
+
+
+
+
+
+
     #endregion
 
     #region MonoBehaviour Functions
@@ -47,6 +65,28 @@ public class LevelUIManager : MonoBehaviour
     private void Start()
     {
         SwitchGameplayUIPhase(activePhase);
+    }
+    private void Update()
+    {
+        if (activePhase == UIGameplayPhase.Phase_6)
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                OnClick_MoveCoinHolderRightBtn();
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                OnClick_MoveCoinHolderLeftBtn();
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                OnClick_Dip();
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                OnClick_RelocateCoinToBucket();
+            }
+        }
     }
     #endregion
 
@@ -100,6 +140,39 @@ public class LevelUIManager : MonoBehaviour
         {
             DisplayVictoryUI();
         }
+    }
+
+    public void UpdateBronzeText(string s)
+    {
+        bronzeText.text = s;
+    }
+
+    public void UpdateGoldText(string s)
+    {
+        goldText.text = s;
+    }
+
+    public void EnableGoldCheck()
+    {
+        goldCheck.SetActive(true);
+    }
+    public void DisableDIYBox()
+    {
+        DIYBox.SetActive(false);
+        WellDone.SetActive(true);
+    }
+    public void EnableBronzeCheck()
+    {
+        bronzeCheck.SetActive(true);
+    }
+    public void EnableGoldCross()
+    {
+        goldCross.SetActive(true);
+    }
+
+    public void EnableBronzeCross()
+    {
+        bronzeCross.SetActive(true);
     }
     #endregion
 
@@ -224,6 +297,7 @@ public class LevelUIManager : MonoBehaviour
         meltingMechUI.SetActive(false);
         purityPBObj.SetActive(false);
         freezeBtn.SetActive(true);
+        freezeText.SetActive(true);
     }
     #endregion
 }

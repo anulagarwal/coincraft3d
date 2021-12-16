@@ -122,11 +122,17 @@ public class CoinCraftingHandler : MonoBehaviour
             moltenGold[i].gameObject.SetActive(false);
         }
 
-        CharacterSingleton.Instance.GetCharacterAnimationsHandler.SwitchCharacterAnimation(CharacterState.Clap);
+//        CharacterSingleton.Instance.GetCharacterAnimationsHandler.SwitchCharacterAnimation(CharacterState.Clap);
         foreach (Transform t in coins)
         {
             t.gameObject.AddComponent<Rigidbody>();
         }
+        Invoke("SwitchToDropCam", 3.5f);
+        
+    }
+
+    public void SwitchToDropCam()
+    {
         goldTrayAnimator.SetTrigger("t_Flip");
         cmcv_4_bucket.gameObject.SetActive(true);
     }
