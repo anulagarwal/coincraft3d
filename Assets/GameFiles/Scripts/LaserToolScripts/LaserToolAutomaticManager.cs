@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserToolManager : MonoBehaviour
+public class LaserToolAutomaticManager : MonoBehaviour
 {
     #region Properties
-    public static LaserToolManager Instance = null;
+    public static LaserToolAutomaticManager Instance = null;
 
     [Header("Attributes")]
     [SerializeField] private float rotSpeed = 0f;
@@ -28,9 +28,17 @@ public class LaserToolManager : MonoBehaviour
     [SerializeField] private List<Transform> triangleDentWaypoints_0 = new List<Transform>();
     [SerializeField] private List<Transform> triangleDentWaypoints_1 = new List<Transform>();
     [SerializeField] private List<Transform> triangleDentWaypoints_2 = new List<Transform>();
+    [SerializeField] private List<Transform> dent_1_Waypoints = new List<Transform>();
+    [SerializeField] private List<Transform> dent_2_Waypoints = new List<Transform>();
+    [SerializeField] private List<Transform> crack_1_Waypoints = new List<Transform>();
+    [SerializeField] private List<Transform> crack_2_Waypoints = new List<Transform>();
 
-
-
+    [Header("Crack Meshes")]
+    [SerializeField] private GameObject coinMesh = null;
+    [SerializeField] private GameObject dentCoin_1 = null;
+    [SerializeField] private GameObject dentCoin_2 = null;
+    [SerializeField] private List<Rigidbody> crackCoin_1 = new List<Rigidbody>();
+    [SerializeField] private List<Rigidbody> crackCoin_2 = new List<Rigidbody>();
 
     private int targetLocationIndex = 0;
     private Vector3 targetLocation = Vector3.zero;
@@ -138,6 +146,19 @@ public class LaserToolManager : MonoBehaviour
                 break;
             case 2:
                 triangleDentWaypoints = triangleDentWaypoints_2;
+                break;
+            case 3:
+                triangleDentWaypoints = dent_1_Waypoints;
+                break;
+            case 4:
+                triangleDentWaypoints = dent_2_Waypoints;
+                break;
+            case 5:
+                print("Working");
+                triangleDentWaypoints = crack_1_Waypoints;
+                break;
+            case 6:
+                triangleDentWaypoints = crack_2_Waypoints;
                 break;
         }
 

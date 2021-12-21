@@ -102,7 +102,7 @@ public class LevelUIManager : MonoBehaviour
 
     public void OnClick_CoinDentTypeBtn(int type)
     {
-        LaserToolManager.Instance.EnableLaserMech(type);
+        LaserToolAutomaticManager.Instance.EnableLaserMech(type);
     }
 
     public void OnClick_Dip()
