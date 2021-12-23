@@ -15,7 +15,7 @@ public class LaserToolManager : MonoBehaviour
     [SerializeField] private List<GameObject> coinDents = null;
     [SerializeField] private List<GameObject> coins = null;
     [SerializeField] private GameObject confetti = null;
-
+    [SerializeField] private List<GameObject> coinHolders = new List<GameObject>();
 
 
 
@@ -28,12 +28,16 @@ public class LaserToolManager : MonoBehaviour
     [SerializeField] private List<Transform> triangleDentWaypoints_0 = new List<Transform>();
     [SerializeField] private List<Transform> triangleDentWaypoints_1 = new List<Transform>();
     [SerializeField] private List<Transform> triangleDentWaypoints_2 = new List<Transform>();
-
+    [SerializeField] private List<Transform> coinCrackWaypoints_1 = new List<Transform>();
+    [SerializeField] private List<Transform> coinCrackWaypoints_2 = new List<Transform>();
+    [SerializeField] private List<Transform> coinDentWaypoints_1 = new List<Transform>();
+    [SerializeField] private List<Transform> coinDentWaypoints_2 = new List<Transform>();
 
 
 
     private int targetLocationIndex = 0;
     private Vector3 targetLocation = Vector3.zero;
+    private GameObject activeCoin = null;
     #endregion
 
     #region Delegates
@@ -101,9 +105,13 @@ public class LaserToolManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D))
         {
             cutTrail.SetActive(false);
-            coinDent.SetActive(false);
-            confetti.SetActive(true);
+            activeCoin.SetActive(false);
+            coinDent.SetActive(true);
             gameObject.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.G))
+        {
+            confetti.SetActive(true);
         }
     }
     #endregion
@@ -126,8 +134,10 @@ public class LaserToolManager : MonoBehaviour
         }
                 laserMechanism += TriangleDent;
 
+        coinHolders[type].SetActive(true);
         coinDent = coinDents[type];       
         coins[type].SetActive(true);
+        activeCoin = coins[type];
         switch (type)
         {
             case 0:
@@ -138,6 +148,18 @@ public class LaserToolManager : MonoBehaviour
                 break;
             case 2:
                 triangleDentWaypoints = triangleDentWaypoints_2;
+                break;
+            case 3:
+                triangleDentWaypoints = coinCrackWaypoints_1;
+                break;
+            case 4:
+                triangleDentWaypoints = coinCrackWaypoints_2;
+                break;
+            case 5:
+                triangleDentWaypoints = coinDentWaypoints_1;
+                break;
+            case 6:
+                triangleDentWaypoints = coinDentWaypoints_2;
                 break;
         }
 
