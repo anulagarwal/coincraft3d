@@ -12,6 +12,8 @@ public class CharacterSpeechHandler : MonoBehaviour
     [Header("Components Reference")]
     [SerializeField] private GameObject speechCloud = null;
     [SerializeField] private TextMeshProUGUI speehCloudTxt = null;
+    [SerializeField] private GameObject goButton = null;
+
     #endregion
 
     #region MonoBehaviour Functions
@@ -27,12 +29,14 @@ public class CharacterSpeechHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             EnableSpeechCloud(true);
+            GetComponent<CharacterAnimationsHandler>().SwitchCharacterAnimation(CharacterState.Clap);
         }
     }
     #region Public Core Functions
     public void EnableSpeechCloud(bool value)
     {
         speechCloud.SetActive(value);
+        goButton.SetActive(value);
     }
     #endregion
 }
