@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class CoinHolderHandler : MonoBehaviour
 {
     #region Properties
@@ -9,6 +9,15 @@ public class CoinHolderHandler : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float relocationSpeed = 0f;
+    [SerializeField] private int bronzeRequirement = 0;
+    [SerializeField] private int goldRequirement;
+    [SerializeField] private int silverRequirement;
+
+    private int bronzeCollected;
+    private int goldCollected;
+    private int silverCollected;
+
+
 
     [Header("Components Reference")]
     [SerializeField] private Animator coinHolderAnimator = null;
@@ -16,6 +25,7 @@ public class CoinHolderHandler : MonoBehaviour
     [SerializeField] private Transform bucketTransform = null;
     [SerializeField] private List<Transform> coins = new List<Transform>();
     [SerializeField] private CoinLocTriggerEventsHandler coinLocTriggerEventsHandler = null;
+    [SerializeField] private TextMeshPro count;
 
     private int activeCoinIndex = 0;
     private int activePointIndex = 0;
@@ -116,9 +126,51 @@ public class CoinHolderHandler : MonoBehaviour
                 }
                 else
                 {
+                    switch (activePointIndex)
+                    {
+                        case 0:
+                            goldCollected++;
+                            LevelUIManager.Instance.UpdateGoldRemainingText(goldRequirement - goldCollected);
+                            if (goldCollected == goldRequirement)
+                            {
+                                LevelUIManager.Instance.DisableGoldText();
+                            }
+                            break;
+
+                        case 1:
+                            bronzeCollected++;
+                            LevelUIManager.Instance.UpdateBronzeRemainingText(bronzeRequirement - bronzeCollected);
+                            if (bronzeCollected == bronzeRequirement)
+                            {
+                                LevelUIManager.Instance.DisableBronzeText();
+                            }
+                            break;
+
+                        case 2:
+                            silverCollected++;
+                            break;
+                         
+                    }
+                 
                     coins[activeCoinIndex].gameObject.AddComponent<Rigidbody>();
                     coins[activeCoinIndex].transform.parent = null;
                     activeCoinIndex++;
+                    count.text = (coins.Count - activeCoinIndex) + "";
+
+                    if(coins.Count - activeCoinIndex == 0)
+                    {
+                        print("aa");
+                        if(goldCollected == goldRequirement && bronzeCollected == bronzeRequirement) {
+
+                            //Win
+                            LevelUIManager.Instance.DisplayVictoryUI();
+
+                        }
+                        else
+                        {
+                            LevelUIManager.Instance.DisplayFailUI();
+                        }
+                    }
                     if (activeCoinIndex < coins.Count)
                     {
                         coins[activeCoinIndex].gameObject.SetActive(true);

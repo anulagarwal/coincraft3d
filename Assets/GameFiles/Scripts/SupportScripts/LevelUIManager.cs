@@ -32,6 +32,18 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] private GameObject purityPBObj = null;
     [SerializeField] private GameObject meltingMechUI = null;
     [SerializeField] private GameObject freezeBtn = null;
+
+    [Header("Phase 6 Components Reference")]
+    [SerializeField] private Text bronzeText = null;
+    [SerializeField] private Text silverText = null;
+    [SerializeField] private Text goldText = null;
+    [SerializeField] private GameObject goldCheck = null;
+    [SerializeField] private GameObject bronzeCheck = null;
+
+
+
+
+
     #endregion
 
     #region MonoBehaviour Functions
@@ -47,6 +59,31 @@ public class LevelUIManager : MonoBehaviour
     private void Start()
     {
         SwitchGameplayUIPhase(activePhase);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            OnClick_MoveCoinHolderLeftBtn();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            OnClick_MoveCoinHolderRightBtn();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnClick_RelocateCoinToBucket();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            OnClick_Dip();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+        }
     }
     #endregion
 
@@ -100,11 +137,33 @@ public class LevelUIManager : MonoBehaviour
         {
             DisplayVictoryUI();
         }
+
+    }
+
+    public void UpdateBronzeRemainingText(int v)
+    {
+        bronzeText.text = "x" + v;
+    }
+
+    public void UpdateGoldRemainingText (int v)
+    {
+        goldText.text = "x" + v;
+    }
+    public void DisableBronzeText()
+    {
+        bronzeText.gameObject.SetActive(false);
+        bronzeCheck.SetActive(true);
+    }
+
+    public void DisableGoldText()
+    {
+        goldText.gameObject.SetActive(false);
+        goldCheck.SetActive(true);
     }
     #endregion
 
     #region Private Core Functions
-    private void SwitchGameplayUIPhase(UIGameplayPhase phase)
+    public void SwitchGameplayUIPhase(UIGameplayPhase phase)
     {
         switch (phase)
         {
